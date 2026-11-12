@@ -23,11 +23,11 @@ code-signed. Click **More info → Run anyway**.
 
 ## Updates (patches)
 
-Most updates are one small file, like `ealdreth_1.0.1.pck`.
+Most updates are one small file, like `ealdreth_1.0.2.pck`.
 
 1. Next to **Ealdreth.exe**, make a folder called **`patches`** (once).
-2. Download the newest **Patch** release's `.pck` file into it (right now: **[v1.0.1](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.1)**).
-3. Start the game: the main menu shows the version, e.g. **v1.0.1 (patched)**.
+2. Download the newest **Patch** release's `.pck` file into it (right now: **[v1.0.2](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.2)**).
+3. Start the game: the main menu shows the version, e.g. **v1.0.2 (patched)**.
 
 Each patch holds every change since its full game, so only the newest one is needed.
 When a new **Full game** release comes out, get that instead (and empty the `patches` folder).
