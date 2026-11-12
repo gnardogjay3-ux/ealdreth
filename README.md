@@ -23,20 +23,28 @@ code-signed. Click **More info → Run anyway**.
 
 ## Updates (patches)
 
-Most updates are one small file, like `ealdreth_1.0.4.pck`.
+Most updates are one small file, like `ealdreth_1.0.5.pck`.
 
 1. Next to **Ealdreth.exe**, make a folder called **`patches`** (once).
-2. Download the newest **Patch** release's `.pck` file into it (right now: **[v1.0.4](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.4)**).
-3. Start the game: the main menu shows the version, e.g. **v1.0.4 (patched)**.
+2. Download the newest **Patch** release's `.pck` file into it (right now: **[v1.0.5](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.5)**).
+3. Start the game: the main menu shows the version, e.g. **v1.0.5 (patched)**.
 
 Each patch holds every change since its full game, so only the newest one is needed.
 When a new **Full game** release comes out, get that instead (and empty the `patches` folder).
+
+## Saved games
+
+**New game — a fresh start** begins a new adventure; it never touches your other saves.
+**Continue** picks up your latest one, and **Saved games…** lists every adventure with its saves
+(continue, host, rename or delete). In the game, **☰ → Save game…** makes a named save; the game
+also autosaves as you play.
 
 ## Playing together
 
 Everyone needs **the same version** — the game tells you if you don't match.
 
-- **Host:** open the game, type your name, leave the port at 7777 and click **Host a game**.
+- **Host:** open the game, type your name, leave the port at 7777 and click **Host a new game**
+  (or **Saved games… → Host it** to carry on an adventure).
   To let friends in over the internet without touching your router, a free tunnel such as
   [playit.gg](https://playit.gg) (a **UDP** tunnel to local port 7777) or
   [Tailscale](https://tailscale.com) works well.
@@ -46,6 +54,11 @@ Everyone needs **the same version** — the game tells you if you don't match.
 
 The host's AI dungeon master and ElevenLabs voices (if they've set them up with their own keys)
 are shared with everyone who joins; keys never leave the host's computer.
+
+## Found a bug?
+
+Press **F9** in the game and click **Save bug report**. It goes in a `bug_reports` folder next to
+Ealdreth.exe (a screenshot, the log and what the game was doing) — nothing is sent anywhere.
 
 ---
 
