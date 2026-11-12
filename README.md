@@ -10,11 +10,11 @@ This page is where the game is downloaded. **Windows 10/11 (64-bit)**, about 4 G
 
 ## Get the game (first time)
 
-1. Open **[Releases](../../releases)** and find the newest release marked **Full game**.
+1. Open **[Releases](https://github.com/gnardogjay3-ux/ealdreth/releases)** and find the newest release marked **Full game** (right now: **[v1.0.0](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.0)**).
 2. Download these 4 files into **one folder**:
    - `Ealdreth.part1`, `Ealdreth.part2`, `Ealdreth.part3`
-   - `Put the game together.bat`
-3. Double-click **Put the game together.bat** and wait until it says **Done!** (about a minute).
+   - `Put.the.game.together.bat`
+3. Double-click **Put.the.game.together.bat** and wait until it says **Done!** (about a minute).
    Windows may warn you about the script — click **More info → Run anyway**.
 4. Double-click **Ealdreth.exe** to play. You can delete the three part files afterwards.
 
@@ -26,7 +26,7 @@ code-signed. Click **More info → Run anyway**.
 Most updates are one small file, like `ealdreth_1.0.1.pck`.
 
 1. Next to **Ealdreth.exe**, make a folder called **`patches`** (once).
-2. Download the newest **Patch** release's `.pck` file into it.
+2. Download the newest **Patch** release's `.pck` file into it (right now: **[v1.0.1](https://github.com/gnardogjay3-ux/ealdreth/releases/tag/v1.0.1)**).
 3. Start the game: the main menu shows the version, e.g. **v1.0.1 (patched)**.
 
 Each patch holds every change since its full game, so only the newest one is needed.
