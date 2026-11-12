@@ -1,0 +1,41 @@
+# Publishes a release from the "publish" branch, then deletes that branch.
+# The branch holds publish/release.json ({tag, title, notes, assets: [names], latest}) and each
+# asset cut into publish/<asset>.chunkNNN pieces (git won't take files over 100 MB); they're
+# joined back together here and attached to the release.
+name: Publish release
+on:
+  push:
+    branches: [publish]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: publish
+      - name: Join the pieces and publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          mkdir -p out
+          TAG=$(jq -r .tag publish/release.json)
+          TITLE=$(jq -r .title publish/release.json)
+          jq -r .notes publish/release.json > notes.md
+          for a in $(jq -r '.assets[]' publish/release.json | tr ' ' '\001'); do
+            name=$(echo "$a" | tr '\001' ' ')
+            cat "publish/$name".chunk* > "out/$name"
+            echo "$name: $(stat -c %s "out/$name") bytes, sha256 $(sha256sum "out/$name" | cut -c1-16)"
+          done
+          EXPECT=$(jq -r '.sha256 // {} | to_entries[] | "\(.value)  out/\(.key)"' publish/release.json)
+          if [ -n "$EXPECT" ]; then echo "$EXPECT" | sha256sum -c -; fi
+          LATEST=$(jq -r 'if .latest == false then "--latest=false" else "--latest" end' publish/release.json)
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" --title "$TITLE" --notes-file notes.md --target main $LATEST out/*
+      - name: Remove the publish branch
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push origin --delete publish || true
